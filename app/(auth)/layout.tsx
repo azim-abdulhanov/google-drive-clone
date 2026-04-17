@@ -1,5 +1,12 @@
-import { ChildProp } from '@/types'
+import { Navbar } from '@/components/shared/navbar'
+import { ChildProps } from '@/types'
 
-export function AuthLayout({ children }: ChildProp) {
-  return <div>{children}</div>
+export function AuthLayout({ children }: ChildProps) {
+  return (
+    <>
+      <Navbar />
+      <div>Sidebar</div>
+      {children}
+    </>
+  )
 }
