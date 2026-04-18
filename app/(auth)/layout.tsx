@@ -1,12 +1,15 @@
 import { Navbar } from '@/components/shared/navbar'
+import { Sidebar } from '@/components/shared/sidebar'
 import { ChildProps } from '@/types'
 
-export function AuthLayout({ children }: ChildProps) {
+export default function AuthLayout({ children }: ChildProps) {
   return (
-    <>
+    <div className='relative'>
       <Navbar />
-      <div>Sidebar</div>
-      {children}
-    </>
+      <Sidebar />
+      <main className='flex items-center justify-center w-full h-[90vh] z-50 relative'>
+        {children}
+      </main>
+    </div>
   )
 }
