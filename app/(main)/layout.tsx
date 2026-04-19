@@ -8,10 +8,14 @@ export default function MainLayout({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      <Sidebar />
+    <div className='h-screen flex flex-col'>
       <Navbar />
-      {children}
+
+      <div className='flex flex-1 overflow-hidden'>
+        <Sidebar />
+
+        <main className='flex-1 overflow-y-auto p-6'>{children}</main>
+      </div>
     </div>
   )
 }
