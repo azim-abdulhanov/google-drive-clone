@@ -1,12 +1,14 @@
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { UserButton } from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server'
 import { HelpCircle, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ModeToggle } from './mode-toggle'
+import { UserBox } from './user-box'
 
-export function Navbar() {
-  // const { userId } = auth()
+export async function Navbar() {
+  const { userId } = await auth()
 
   return (
     <div className='sticky top-0 z-50 w-full h-16 bg-[#f6f9fc] dark:bg-[#1b1b1b] flex items-center justify-between px-6 border-b'>
@@ -33,7 +35,13 @@ export function Navbar() {
           </Button>
         </div>
 
-        <UserButton />
+        {userId ? (
+          <UserBox />
+        ) : (
+          <Avatar>
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        )}
       </div>
     </div>
   )
