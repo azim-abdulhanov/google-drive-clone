@@ -1,6 +1,4 @@
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { auth } from '@clerk/nextjs/server'
 import { HelpCircle, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,8 +6,6 @@ import { ModeToggle } from './mode-toggle'
 import { UserBox } from './user-box'
 
 export async function Navbar() {
-  const { userId } = await auth()
-
   return (
     <div className='sticky top-0 z-50 w-full h-16 bg-[#f6f9fc] dark:bg-[#1b1b1b] flex items-center justify-between px-6 border-b'>
       <Link href='/' className='flex items-center gap-2'>
@@ -35,13 +31,7 @@ export async function Navbar() {
           </Button>
         </div>
 
-        {userId ? (
-          <UserBox />
-        ) : (
-          <Avatar>
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        )}
+        <UserBox />
       </div>
     </div>
   )

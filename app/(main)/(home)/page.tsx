@@ -1,5 +1,5 @@
-import { UserButton } from '@clerk/nextjs'
+import { UserBox } from '@/components/shared/user-box'
 
 export default function Home() {
-  return <UserButton />
+  return <UserBox />
 }

@@ -4,28 +4,32 @@ import { FileUp, Folder, FolderUp } from 'lucide-react'
 
 export function PopoverActions() {
   return (
-    <>
-      <ul className='flex flex-col gap-2'>
-        <li>
-          <Button className='w-full cursor-pointer'>
-            <Folder />
-            <span>New Folder</span>
-          </Button>
-        </li>
-        <Separator />
-        <li>
-          <Button className='w-full cursor-pointer'>
-            <FileUp />
-            <span>File Upload</span>
-          </Button>
-        </li>
-        <li>
-          <Button className='w-full cursor-pointer'>
-            <FolderUp />
-            <span>Folder Upload</span>
-          </Button>
-        </li>
-      </ul>
-    </>
+    <div className='flex flex-col gap-2'>
+      <div className='flex items-center gap-2 hover:bg-secondary transition text-sm'>
+        <Button
+          variant='ghost'
+          className='flex items-center gap-3 cursor-pointer'>
+          <Folder className='w-5 h-5' />
+          <span>New Folder</span>
+        </Button>
+      </div>
+      <Separator />
+      <div className='flex items-center gap-2 hover:bg-secondary transition text-sm'>
+        <Button
+          variant='ghost'
+          className='flex items-center gap-3 cursor-pointer'>
+          <FileUp className='w-5 h-5' />
+          <span>File Upload</span>
+        </Button>
+      </div>
+      <div className='flex items-center gap-2 hover:bg-secondary transition text-sm'>
+        <Button
+          variant='ghost'
+          className='flex items-center gap-3 cursor-pointer'>
+          <FolderUp className='w-5 h-5' />
+          <span>Folder Upload</span>
+        </Button>
+      </div>
+    </div>
   )
 }
