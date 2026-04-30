@@ -14,14 +14,14 @@ export function NewButton() {
     <Popover>
       <PopoverTrigger asChild>
         <Button className='flex items-center gap-3 w-28 h-12 rounded-3xl mb-6 cursor-pointer'>
-          <Plus size={32} />
+          <Plus className='w-5 h-5' />
           <span>New</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent
         align='start'
-        alignOffset={-2}
-        className='bg-white dark:bg-[#2c2c2c] px-0 py-2 rounded shadow-md'>
+        alignOffset={-1}
+        className='bg-white dark:bg-secondary px-0 py-2 rounded'>
         <PopoverActions />
       </PopoverContent>
     </Popover>

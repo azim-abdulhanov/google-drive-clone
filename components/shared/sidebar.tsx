@@ -15,7 +15,7 @@ export function Sidebar() {
             <Link
               href={link.path}
               key={link.label}
-              className='flex items-center gap-3 text-sm font-medium hover:bg-accent dark:hover:bg-secondary rounded-full px-3 p-2 transition-colors'>
+              className='flex items-center gap-3 text-sm rounded-full px-4 p-2 hover:bg-background dark:hover:bg-secondary'>
               <link.icon className='w-4 h-4' />
               <span>{link.label}</span>
             </Link>
