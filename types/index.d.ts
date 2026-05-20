@@ -11,4 +11,5 @@ export interface IFolder {
   userId: string
   createdAt: Timestamp
   archivedTime: Timestamp
+  isStar: boolean
 }

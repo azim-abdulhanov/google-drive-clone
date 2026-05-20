@@ -7,7 +7,7 @@ import { UserBox } from './user-box'
 
 export async function Navbar() {
   return (
-    <div className='sticky top-0 z-50 w-full h-16 bg-[#f6f9fc] dark:bg-[#1b1b1b] flex items-center justify-between px-6 border-b'>
+    <div className='sticky top-0 z-50 w-full h-16 bg-[#f6f9fc] dark:bg-[#1b1b1b] flex items-center justify-between px-6'>
       <Link href='/' className='flex items-center gap-2'>
         <Image
           className='w-9 h-9'

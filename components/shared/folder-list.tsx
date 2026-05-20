@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Table,
   TableBody,
@@ -5,15 +7,18 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table'
+import { useLayout } from '@/hooks/use-layout'
 import { IFolder } from '@/types'
-import { FolderItem } from './folder-item'
+import { FolderItemCard, FolderItemRow } from './folder-item'
 
 interface Props {
   folders: IFolder[]
 }
 
 export function FolderList({ folders }: Props) {
-  return (
+  const { layout } = useLayout()
+
+  return layout === 'list' ? (
     <Table>
       <TableHeader>
         <TableRow>
@@ -25,9 +30,15 @@ export function FolderList({ folders }: Props) {
       </TableHeader>
       <TableBody>
         {folders.map(folder => (
-          <FolderItem key={folder.id} folder={folder} />
+          <FolderItemRow key={folder.id} folder={folder} />
         ))}
       </TableBody>
     </Table>
+  ) : (
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+      {folders.map(folder => (
+        <FolderItemCard key={folder.id} folder={folder} />
+      ))}
+    </div>
   )
 }

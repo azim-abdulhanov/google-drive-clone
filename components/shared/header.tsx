@@ -10,7 +10,7 @@ import { useLayout } from '@/hooks/use-layout'
 import {
   ChevronDown,
   Info,
-  LayoutPanelLeft,
+  LayoutPanelTop,
   TableProperties
 } from 'lucide-react'
 import { PopoverActions } from './popover-actions'
@@ -45,6 +45,7 @@ export function Header({ label, isHome }: Props) {
         <div className='flex items-center gap-2'>
           {layout === 'list' ? (
             <Button
+              className='cursor-pointer'
               variant='ghost'
               size='icon'
               onClick={() => setLayout('grid')}>
@@ -52,13 +53,14 @@ export function Header({ label, isHome }: Props) {
             </Button>
           ) : (
             <Button
+              className='cursor-pointer'
               variant='ghost'
               size='icon'
               onClick={() => setLayout('list')}>
-              <LayoutPanelLeft className='w-4 h-4' />
+              <LayoutPanelTop className='w-4 h-4' />
             </Button>
           )}
-          <Button variant='ghost' size='icon' onClick={() => setLayout('list')}>
+          <Button className='cursor-pointer' variant='ghost' size='icon'>
             <Info className='w-4 h-4' />
           </Button>
         </div>

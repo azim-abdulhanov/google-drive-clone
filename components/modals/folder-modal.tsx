@@ -36,7 +36,8 @@ export function FolderModal() {
       name: values.name,
       createdAt: serverTimestamp(),
       userId: user?.id,
-      isArchived: false
+      isArchived: false,
+      isStar: false
     }).then(() => {
       form.reset()
       onClose()
